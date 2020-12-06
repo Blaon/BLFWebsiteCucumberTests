@@ -1,39 +1,40 @@
-package pagesPOM;
+package pagesPOM.adminPages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import pagesPOM.CommonPageAttributes;
 
 
-public class AdminPage extends CommonPageAttributes{
+public class AdminPage extends CommonPageAttributes {
     public AdminPage(WebDriver driver) {
         super(driver);
     }
 
     @FindBy(id = "SeasonsButton")
-    WebElement seasonsButton;
+    public WebElement seasonsButton;
 
     @FindBy(id = "LeaguesButton")
-    WebElement leaguesButton;
+    public WebElement leaguesButton;
 
     @FindBy(id = "MatchesButton")
-    WebElement matchesButton;
+    public WebElement matchesButton;
 
     @FindBy(id = "PlayersButton")
-    WebElement playersButton;
+    public WebElement playersButton;
 
     @FindBy(id = "TeamsButton")
-    WebElement teamsButton;
+    public WebElement teamsButton;
 
     @FindBy(id = "UsersButton")
-    WebElement usersButton;
+    public WebElement usersButton;
 
     @FindBy(id = "StatisticsButton")
-    WebElement statisticsButton;
+    public WebElement statisticsButton;
 
     @FindBy(id = "AscendingIdOrderButton")
-    WebElement ascendingIdOrderButton;
+    public WebElement ascendingIdOrderButton;
 
     public void clickOnSeasonsButton(){
         seasonsButton.click();
@@ -68,6 +69,10 @@ public class AdminPage extends CommonPageAttributes{
     public void clickOnStatisticsButton(){
         statisticsButton.click();
         wait.until(ExpectedConditions.visibilityOf(ascendingIdOrderButton));
+    }
+
+    public void clickOnAscendingOrderButton(){
+        ascendingIdOrderButton.click();
     }
 
     public void goToAdminPage(){

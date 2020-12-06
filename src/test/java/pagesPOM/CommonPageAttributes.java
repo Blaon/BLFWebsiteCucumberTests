@@ -5,8 +5,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public abstract class CommonPageAttributes {
-    WebDriver driver;
-    WebDriverWait wait;
+    public WebDriver driver;
+    public WebDriverWait wait;
 
     public CommonPageAttributes(WebDriver driver){
         this.driver = driver;
