@@ -36,47 +36,47 @@ public class AdminPage extends CommonPageAttributes {
     @FindBy(id = "AscendingIdOrderButton")
     public WebElement ascendingIdOrderButton;
 
-    public void clickOnSeasonsButton(){
+    public void clickOnSeasonsButton() {
         seasonsButton.click();
         wait.until(ExpectedConditions.visibilityOf(ascendingIdOrderButton));
     }
 
-    public void clickOnLeaguesButton(){
+    public void clickOnLeaguesButton() {
         leaguesButton.click();
         wait.until(ExpectedConditions.visibilityOf(ascendingIdOrderButton));
     }
 
-    public void clickOnMatchesButton(){
+    public void clickOnMatchesButton() {
         matchesButton.click();
         wait.until(ExpectedConditions.visibilityOf(ascendingIdOrderButton));
     }
 
-    public void clickOnPlayersButton(){
+    public void clickOnPlayersButton() {
         playersButton.click();
         wait.until(ExpectedConditions.visibilityOf(ascendingIdOrderButton));
     }
 
-    public void clickOnTeamsButton(){
+    public void clickOnTeamsButton() {
         teamsButton.click();
         wait.until(ExpectedConditions.visibilityOf(ascendingIdOrderButton));
     }
 
-    public void clickOnUsersButton(){
+    public void clickOnUsersButton() {
         usersButton.click();
         wait.until(ExpectedConditions.visibilityOf(ascendingIdOrderButton));
     }
 
-    public void clickOnStatisticsButton(){
+    public void clickOnStatisticsButton() {
         statisticsButton.click();
         wait.until(ExpectedConditions.visibilityOf(ascendingIdOrderButton));
     }
 
-    public void clickOnAscendingOrderButton(){
+    public void clickOnAscendingOrderButton() {
         ascendingIdOrderButton.click();
     }
 
-    public void goToAdminPage(){
-        driver.navigate().to(System.getenv("HOME_PAGE")+"/admin");
+    public void goToAdminPage() {
+        driver.navigate().to(System.getenv("HOME_PAGE") + "/admin");
         wait.until(ExpectedConditions.visibilityOf(seasonsButton));
     }
 }

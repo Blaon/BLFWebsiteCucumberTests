@@ -3,17 +3,33 @@ package steps;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.chrome.ChromeDriver;
-import pagesPOM.adminPages.AdminPage;
+import pagesPOM.adminPages.*;
 
 public class DatabaseManagerBrowserSteps {
     ChromeDriver driver = new ChromeDriver();
     AdminPage adminPage;
+    LeaguesTablePage leaguesTablePage;
+    MatchesTablePage matchesTablePage;
+    PlayersTablePage playersTablePage;
+    SeasonsTablePage seasonsTablePage;
+    StatisticsTablePage statisticsTablePage;
+    TeamsTablePage teamsTablePage;
+    UsersTablePage usersTablePage;
 
     @Before
     public void setup(){
         adminPage=new AdminPage(driver);
+        leaguesTablePage = new LeaguesTablePage(driver);
+        matchesTablePage = new MatchesTablePage(driver);
+        playersTablePage = new PlayersTablePage(driver);
+        seasonsTablePage = new SeasonsTablePage(driver);
+        statisticsTablePage = new StatisticsTablePage(driver);
+        teamsTablePage = new TeamsTablePage(driver);
+        usersTablePage = new UsersTablePage(driver);
         driver.manage().window().maximize();
     }
 
@@ -59,5 +75,44 @@ public class DatabaseManagerBrowserSteps {
 
     @And("Order the table by ascending id")
     public void orderTheTableByAscendingId() {adminPage.clickOnAscendingOrderButton();
+    }
+
+    @Then("The first record should be 2011-2012")
+    public void theFirstRecordShouldBe20112012() {
+        Assert.assertEquals("2011-2012", seasonsTablePage.getFirstRecordText());
+    }
+
+    @Then("The first record should be ismeretlen liga")
+    public void theFirstRecordShouldBeIsmeretlenLiga() {
+        Assert.assertEquals("ismeretlen Liga",leaguesTablePage.getFirstRecordText());
+        
+    }
+
+    @Then("The first record should be a match on 2010-09-04 13:00")
+    public void theFirstRecordShouldBeAMatchOn() {
+        Assert.assertEquals("2010-09-04 13:00",matchesTablePage.getFirstRecordText());
+    }
+
+    @Then("The first record should be Bitvai Attila")
+    public void theFirstRecordShouldBeBitvaiAttila() {
+        Assert.assertEquals("Bitvai Attila",playersTablePage.getFirstRecordText());
+        
+    }
+
+    @Then("The first record should be BLF Palota - NB.II.")
+    public void theFirstRecordShouldBeBLFPalotaNBII() {
+        Assert.assertEquals("BLF Palota - NB.II.",teamsTablePage.getFirstRecordText());
+        
+    }
+
+    @Then("The first record should be AAATesterAdmin")
+    public void theFirstRecordShouldBeAAATesterAdmin() {
+        Assert.assertEquals("AAATesterAdmin",usersTablePage.getFirstRecordText());
+        
+    }
+
+    @Then("The first record should be Solymosi Tamás")
+    public void theFirstRecordShouldBeSolymosiTamás() {
+        Assert.assertEquals("Solymosi Tamás",statisticsTablePage.getFirstRecordText());
     }
 }
