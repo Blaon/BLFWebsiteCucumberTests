@@ -13,7 +13,7 @@ public class StatisticsTablePage extends CommonPageAttributes {
     @FindBy(xpath = "//tbody/tr[1]/td[3]/div")
     WebElement firstRecordName;
 
-    public String getFirstRecordText(){
+    public String getFirstRecordText() {
         return firstRecordName.getText();
     }
 }

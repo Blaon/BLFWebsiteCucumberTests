@@ -33,46 +33,51 @@ public class AdminPage extends CommonPageAttributes {
     @FindBy(id = "StatisticsButton")
     public WebElement statisticsButton;
 
-    @FindBy(id = "AscendingIdOrderButton")
-    public WebElement ascendingIdOrderButton;
+    @FindBy(id = "OrderButton")
+    public WebElement OrderByIdButton;
+
+    @FindBy(xpath = "//tbody/tr[1]/td[1]/div")
+    WebElement firstRecordId;
 
     public void clickOnSeasonsButton() {
         seasonsButton.click();
-        wait.until(ExpectedConditions.visibilityOf(ascendingIdOrderButton));
+        wait.until(ExpectedConditions.visibilityOf(OrderByIdButton));
     }
 
     public void clickOnLeaguesButton() {
         leaguesButton.click();
-        wait.until(ExpectedConditions.visibilityOf(ascendingIdOrderButton));
+        wait.until(ExpectedConditions.visibilityOf(OrderByIdButton));
     }
 
     public void clickOnMatchesButton() {
         matchesButton.click();
-        wait.until(ExpectedConditions.visibilityOf(ascendingIdOrderButton));
+        wait.until(ExpectedConditions.visibilityOf(OrderByIdButton));
     }
 
     public void clickOnPlayersButton() {
         playersButton.click();
-        wait.until(ExpectedConditions.visibilityOf(ascendingIdOrderButton));
+        wait.until(ExpectedConditions.visibilityOf(OrderByIdButton));
     }
 
     public void clickOnTeamsButton() {
         teamsButton.click();
-        wait.until(ExpectedConditions.visibilityOf(ascendingIdOrderButton));
+        wait.until(ExpectedConditions.visibilityOf(OrderByIdButton));
     }
 
     public void clickOnUsersButton() {
         usersButton.click();
-        wait.until(ExpectedConditions.visibilityOf(ascendingIdOrderButton));
+        wait.until(ExpectedConditions.visibilityOf(OrderByIdButton));
     }
 
     public void clickOnStatisticsButton() {
         statisticsButton.click();
-        wait.until(ExpectedConditions.visibilityOf(ascendingIdOrderButton));
+        wait.until(ExpectedConditions.visibilityOf(OrderByIdButton));
     }
 
-    public void clickOnAscendingOrderButton() {
-        ascendingIdOrderButton.click();
+    public void clickOnOrderByIdButton() {
+        if (Integer.parseInt(firstRecordId.getText())>5){
+            OrderByIdButton.click();
+        }
     }
 
     public void goToAdminPage() {

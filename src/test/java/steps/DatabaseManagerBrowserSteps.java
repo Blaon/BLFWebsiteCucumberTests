@@ -21,8 +21,8 @@ public class DatabaseManagerBrowserSteps {
     UsersTablePage usersTablePage;
 
     @Before
-    public void setup(){
-        adminPage=new AdminPage(driver);
+    public void setup() {
+        adminPage = new AdminPage(driver);
         leaguesTablePage = new LeaguesTablePage(driver);
         matchesTablePage = new MatchesTablePage(driver);
         playersTablePage = new PlayersTablePage(driver);
@@ -39,42 +39,50 @@ public class DatabaseManagerBrowserSteps {
     }
 
     @When("I click on the seasons button")
-    public void iClickOnTheSeasonsButton() {adminPage.clickOnSeasonsButton();
+    public void iClickOnTheSeasonsButton() {
+        adminPage.clickOnSeasonsButton();
 
     }
 
     @When("I click on the leagues button")
-    public void iClickOnTheLeaguesButton() {adminPage.clickOnLeaguesButton();
+    public void iClickOnTheLeaguesButton() {
+        adminPage.clickOnLeaguesButton();
 
     }
 
     @When("I click on the matches button")
-    public void iClickOnTheMatchesButton() {adminPage.clickOnMatchesButton();
+    public void iClickOnTheMatchesButton() {
+        adminPage.clickOnMatchesButton();
 
     }
 
     @When("I click on the players button")
-    public void iClickOnThePlayersButton() {adminPage.clickOnPlayersButton();
+    public void iClickOnThePlayersButton() {
+        adminPage.clickOnPlayersButton();
 
     }
 
     @When("I click on the teams button")
-    public void iClickOnTheTeamsButton() {adminPage.clickOnTeamsButton();
+    public void iClickOnTheTeamsButton() {
+        adminPage.clickOnTeamsButton();
 
     }
 
     @When("I click on the users button")
-    public void iClickOnTheUsersButton() {adminPage.clickOnUsersButton();
+    public void iClickOnTheUsersButton() {
+        adminPage.clickOnUsersButton();
 
     }
 
     @When("I click on the statistics button")
-    public void iClickOnTheStatisticsButton() {adminPage.clickOnStatisticsButton();
+    public void iClickOnTheStatisticsButton() {
+        adminPage.clickOnStatisticsButton();
 
     }
 
     @And("Order the table by ascending id")
-    public void orderTheTableByAscendingId() {adminPage.clickOnAscendingOrderButton();
+    public void orderTheTableByAscendingId() {
+        adminPage.clickOnOrderByIdButton();
     }
 
     @Then("The first record should be 2011-2012")
@@ -84,35 +92,35 @@ public class DatabaseManagerBrowserSteps {
 
     @Then("The first record should be ismeretlen liga")
     public void theFirstRecordShouldBeIsmeretlenLiga() {
-        Assert.assertEquals("ismeretlen Liga",leaguesTablePage.getFirstRecordText());
-        
+        Assert.assertEquals("ismeretlen Liga", leaguesTablePage.getFirstRecordText());
+
     }
 
     @Then("The first record should be a match on 2010-09-04 13:00")
     public void theFirstRecordShouldBeAMatchOn() {
-        Assert.assertEquals("2010-09-04 13:00",matchesTablePage.getFirstRecordText());
+        Assert.assertEquals("2010-09-04 13:00", matchesTablePage.getFirstRecordText());
     }
 
     @Then("The first record should be Bitvai Attila")
     public void theFirstRecordShouldBeBitvaiAttila() {
-        Assert.assertEquals("Bitvai Attila",playersTablePage.getFirstRecordText());
-        
+        Assert.assertEquals("Bitvai Attila", playersTablePage.getFirstRecordText());
+
     }
 
     @Then("The first record should be BLF Palota - NB.II.")
     public void theFirstRecordShouldBeBLFPalotaNBII() {
-        Assert.assertEquals("BLF Palota - NB.II.",teamsTablePage.getFirstRecordText());
-        
+        Assert.assertEquals("BLF Palota - NB.II.", teamsTablePage.getFirstRecordText());
+
     }
 
     @Then("The first record should be AAATesterAdmin")
     public void theFirstRecordShouldBeAAATesterAdmin() {
-        Assert.assertEquals("AAATesterAdmin",usersTablePage.getFirstRecordText());
-        
+        Assert.assertEquals("AAATesterAdmin", usersTablePage.getFirstRecordText());
+
     }
 
     @Then("The first record should be Solymosi Tamás")
     public void theFirstRecordShouldBeSolymosiTamás() {
-        Assert.assertEquals("Solymosi Tamás",statisticsTablePage.getFirstRecordText());
+        Assert.assertEquals("Solymosi Tamás", statisticsTablePage.getFirstRecordText());
     }
 }

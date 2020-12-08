@@ -13,7 +13,7 @@ public class UsersTablePage extends CommonPageAttributes {
     @FindBy(xpath = "//tbody/tr[1]/td[2]/div")
     WebElement firstRecordName;
 
-    public String getFirstRecordText(){
+    public String getFirstRecordText() {
         return firstRecordName.getText();
     }
 }

@@ -10,10 +10,10 @@ public class SeasonsTablePage extends CommonPageAttributes {
         super(driver);
     }
 
-@FindBy(xpath = "//tbody/tr[1]/td[2]/div")
+    @FindBy(xpath = "//tbody/tr[1]/td[2]/div")
     WebElement firstRecordName;
 
-    public String getFirstRecordText(){
+    public String getFirstRecordText() {
         return firstRecordName.getText();
     }
 }

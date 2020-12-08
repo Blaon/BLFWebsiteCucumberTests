@@ -1,4 +1,5 @@
 Feature: Database Manager Browser
+
   Scenario: Show correct data on seasons table
     Given I am on admin Page
     When I click on the seasons button
