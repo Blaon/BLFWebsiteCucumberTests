@@ -10,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import pagesPOM.adminPages.*;
 
 public class DatabaseManagerBrowserSteps {
-    ChromeDriver driver = new ChromeDriver();
+
     AdminPage adminPage;
     LeaguesTablePage leaguesTablePage;
     MatchesTablePage matchesTablePage;
@@ -22,6 +22,8 @@ public class DatabaseManagerBrowserSteps {
 
     @Before
     public void setup() {
+        ChromeDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
         adminPage = new AdminPage(driver);
         leaguesTablePage = new LeaguesTablePage(driver);
         matchesTablePage = new MatchesTablePage(driver);
@@ -30,7 +32,7 @@ public class DatabaseManagerBrowserSteps {
         statisticsTablePage = new StatisticsTablePage(driver);
         teamsTablePage = new TeamsTablePage(driver);
         usersTablePage = new UsersTablePage(driver);
-        driver.manage().window().maximize();
+
     }
 
     @Given("I am on admin Page")

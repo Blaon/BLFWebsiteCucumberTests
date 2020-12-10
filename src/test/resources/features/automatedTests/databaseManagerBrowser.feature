@@ -1,10 +1,12 @@
 Feature: Database Manager Browser
 
+
   Scenario: Show correct data on seasons table
     Given I am on admin Page
     When I click on the seasons button
     And Order the table by ascending id
     Then The first record should be 2011-2012
+
 
   Scenario: Show correct data on leagues table
     Given I am on admin Page
