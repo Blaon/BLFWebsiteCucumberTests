@@ -10,7 +10,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import pagesPOM.adminPages.*;
 
 public class DatabaseManagerBrowserSteps {
-
     AdminPage adminPage;
     LeaguesTablePage leaguesTablePage;
     MatchesTablePage matchesTablePage;
